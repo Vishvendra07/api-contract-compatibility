@@ -1,0 +1,59 @@
+{
+  "v1": {
+    "version": "v1",
+    "accept": true,
+    "invalid_request_http": 422,
+    "contracts": {
+      "finance export": {
+        "compatible": true,
+        "violations": []
+      },
+      "operations portal": {
+        "compatible": true,
+        "violations": []
+      }
+    }
+  },
+  "breaking": {
+    "version": "breaking",
+    "accept": false,
+    "invalid_request_http": 422,
+    "contracts": {
+      "finance export": {
+        "compatible": false,
+        "violations": [
+          {
+            "path": "/",
+            "rule": "required",
+            "message": "'balance_cents' is a required property"
+          }
+        ]
+      },
+      "operations portal": {
+        "compatible": false,
+        "violations": [
+          {
+            "path": "stage",
+            "rule": "enum",
+            "message": "'verified' is not one of ['pending', 'active', 'closed']"
+          }
+        ]
+      }
+    }
+  },
+  "compatible": {
+    "version": "compatible",
+    "accept": true,
+    "invalid_request_http": 422,
+    "contracts": {
+      "finance export": {
+        "compatible": true,
+        "violations": []
+      },
+      "operations portal": {
+        "compatible": true,
+        "violations": []
+      }
+    }
+  }
+}
